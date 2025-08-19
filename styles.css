@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Press+Start+2P&display=swap');
+
+body {
+    background: repeating-linear-gradient(
+        45deg,
+        #ff0000,
+        #ff0000 20px,
+        #000 20px,
+        #000 40px
+    );
+    font-family: 'Press Start 2P', monospace;
+    color: #00ffea;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Container principal tremendo */
+.main {
+    text-align: center;
+    padding: 20px;
+    animation: shake 0.5s infinite;
+}
+
+/* Imagem piscando */
+#img {
+    width: 300px;
+    border: 5px dashed #00ffea;
+    animation: glitch 1s infinite;
+}
+
+/* Títulos distorcidos */
+h2, h4 {
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 3rem;
+    color: #ff00ff;
+    text-shadow: 3px 3px #00ffea, -3px -3px #ff0000;
+    animation: colorPulse 2s infinite alternate;
+}
+
+/* Texto da descrição caindo no caos */
+.description p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    background: rgba(0,0,0,0.7);
+    border: 3px dotted #ff00ff;
+    padding: 10px;
+    transform: rotate(-2deg);
+    animation: tilt 3s infinite alternate ease-in-out;
+}
+
+/* Rodapé perturbador */
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    background: #111;
+    color: #ff0000;
+    padding: 10px;
+    letter-spacing: 3px;
+    animation: flicker 1.5s infinite;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    20% { transform: translate(-2px, -3px) rotate(-1deg); }
+    40% { transform: translate(-1px, 2px) rotate(1deg); }
+    60% { transform: translate(2px, 1px) rotate(0deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes glitch {
+    0% { filter: hue-rotate(0deg) contrast(1); }
+    20% { filter: hue-rotate(90deg) contrast(2); }
+    40% { filter: hue-rotate(180deg) contrast(1.5); }
+    60% { filter: hue-rotate(270deg) contrast(2.5); }
+    80% { filter: hue-rotate(360deg) contrast(1); }
+    100% { filter: hue-rotate(0deg) contrast(1); }
+}
+
+@keyframes colorPulse {
+    0% { color: #ff00ff; }
+    50% { color: #00ffea; }
+    100% { color: #ff0000; }
+}
+
+@keyframes tilt {
+    0% { transform: rotate(-2deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-2deg); }
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+    20%, 22%, 24%, 55% { opacity: 0; }
+}
